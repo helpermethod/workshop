@@ -30,7 +30,7 @@ public class Listener {
 	}
 
 	@KafkaHandler
-	public void listen(@Payload QuantityEvent quantityEvent) {
+	public void listen(@Payload StockEvent stockEvent) {
 		// NOOP
 	}
 }

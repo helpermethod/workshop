@@ -2,7 +2,7 @@ package com.predic8.workshop.api;
 
 
 import com.predic8.workshop.domain.Article;
-import com.predic8.workshop.dto.QuantityDto;
+import com.predic8.workshop.dto.StockDto;
 import com.predic8.workshop.service.ArticleCommandService;
 import com.predic8.workshop.service.ArticleQueryService;
 import lombok.RequiredArgsConstructor;
@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RequiredArgsConstructor
-@RequestMapping("/articles")
+@RequestMapping("/stocks")
 @RestController
-public class ArticleRestController {
+public class StockRestController {
 	private final ArticleQueryService articleQueryService;
 	private final ArticleCommandService articleCommandService;
 
@@ -35,7 +35,7 @@ public class ArticleRestController {
 	}
 
 	@PutMapping("/{uuid}")
-	public ResponseEntity<Void> update(@PathVariable String uuid, @RequestBody QuantityDto quantity) {
+	public ResponseEntity<Void> update(@PathVariable String uuid, @RequestBody StockDto quantity) {
 		articleCommandService.update(uuid, quantity);
 
 		return ResponseEntity.noContent().build();

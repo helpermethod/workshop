@@ -1,7 +1,7 @@
 package com.predic8.workshop.service;
 
-import com.predic8.workshop.dto.QuantityDto;
-import com.predic8.workshop.event.QuantityEvent;
+import com.predic8.workshop.dto.StockDto;
+import com.predic8.workshop.event.StockEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Service
 public class ArticleCommandService {
-	private final KafkaTemplate<String, QuantityEvent> kafkaTemplate;
+	private final KafkaTemplate<String, StockEvent> kafkaTemplate;
 
-	public void update(String uuid, QuantityDto quantityDto) {
-		kafkaTemplate.send("articles", uuid, new QuantityEvent(quantityDto.getQuantity()));
+	public void update(String uuid, StockDto quantityDto) {
+		kafkaTemplate.send("articles", uuid, new StockEvent(quantityDto.getStock()));
 	}
 }

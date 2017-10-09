@@ -1,10 +1,6 @@
 package com.predic8.workshop;
 
-import com.predic8.workshop.dto.QuantityDto;
-import com.predic8.workshop.event.ArticleEvent;
 import com.predic8.workshop.event.Event;
-import com.predic8.workshop.event.QuantityEvent;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.util.QEncoderStream;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;

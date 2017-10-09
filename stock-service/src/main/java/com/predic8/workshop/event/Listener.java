@@ -30,9 +30,9 @@ public class Listener {
 	}
 
 	@KafkaHandler
-	public void listen(@Payload QuantityEvent quantityEvent, @Header(RECEIVED_MESSAGE_KEY) String uuid) {
+	public void listen(@Payload StockEvent stockEvent, @Header(RECEIVED_MESSAGE_KEY) String uuid) {
 		Article article = articleRepository.findOne(uuid);
-		article.setQuantity(quantityEvent.getQuantity());
+		article.setQuantity(stockEvent.getStock());
 		articleRepository.save(article);
 	}
 }
