@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
-public class ArticleCommandService {
+public class StockCommandService {
 	private final KafkaTemplate<String, StockEvent> kafkaTemplate;
 
 	public void update(String uuid, StockDto quantityDto) {

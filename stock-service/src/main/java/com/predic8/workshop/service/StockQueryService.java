@@ -1,8 +1,8 @@
 package com.predic8.workshop.service;
 
-import com.predic8.workshop.domain.Article;
+import com.predic8.workshop.domain.Stock;
 import com.predic8.workshop.error.NotFoundException;
-import com.predic8.workshop.repository.ArticleRepository;
+import com.predic8.workshop.repository.StockRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,16 +13,16 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
-public class ArticleQueryService {
-	private final ArticleRepository articleRepository;
+public class StockQueryService {
+	private final StockRepository stockRepository;
 
 	@GetMapping
-	public List<Article> index() {
-		return articleRepository.findAll();
+	public List<Stock> index() {
+		return stockRepository.findAll();
 	}
 
 	@GetMapping
-	public Article show(@PathVariable String uuid) {
-		return Optional.ofNullable(articleRepository.findOne(uuid)).orElseThrow(NotFoundException::new);
+	public Stock show(@PathVariable String uuid) {
+		return Optional.ofNullable(stockRepository.findOne(uuid)).orElseThrow(NotFoundException::new);
 	}
 }

@@ -28,7 +28,7 @@ public class KafkaConfiguration {
 
 		configs.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServers());
 		configs.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-		configs.put(ConsumerConfig.GROUP_ID_CONFIG, "stocks");
+		configs.put(ConsumerConfig.GROUP_ID_CONFIG, "trends");
 		configs.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
 		return configs;

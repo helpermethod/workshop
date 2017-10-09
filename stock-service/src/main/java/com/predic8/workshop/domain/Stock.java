@@ -16,8 +16,9 @@ import static lombok.AccessLevel.PROTECTED;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Article {
+public class Stock {
 	@Id
 	private String uuid;
+	private String name;
 	private Long quantity;
 }
